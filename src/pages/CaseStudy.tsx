@@ -99,7 +99,7 @@ const CaseStudy = () => {
                     </p>
                     <div className="row">
                         <div className="col col-12 col-md-6">
-                            <h3 className="mb-4">Before:</h3>
+                            <h3 className="my-4">Before:</h3>
                             <img src="/feedback-before.png" alt="mockup before" className="img-fluid" />
                         </div>
                         <div className="col col-12 col-md-6">
