@@ -12,7 +12,7 @@ const CaseStudy = () => {
     const [currentTab, setCurrentTab] = useState<number>(0);
     const [iframeLoaded, setIframeLoaded] = useState<boolean>(false);
 
-    const handleTabChange = (event: React.SyntheticEvent, newValue: number) => {
+    const handleTabChange = (_event: React.SyntheticEvent, newValue: number) => {
         setCurrentTab(newValue);
     };
 
