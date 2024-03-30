@@ -103,7 +103,7 @@ const CaseStudy = () => {
                             <img src="/feedback-before.png" alt="mockup before" className="img-fluid" />
                         </div>
                         <div className="col col-12 col-md-6">
-                            <h3 className="mb-4">After:</h3>
+                            <h3 className="my-4">After:</h3>
                             <img
                                 src="/mockup.png"
                                 alt="mockup after with layout and style changes"
