@@ -1,8 +1,24 @@
+import { useState } from 'react';
 import { Container, TextField } from '@mui/material';
 import Hero from '../components/Hero';
-import { Button, Form } from 'react-bootstrap';
+import { Button } from 'react-bootstrap';
 
 const About = () => {
+    const [formData, setFormData] = useState({
+        name: '',
+        phone: '',
+        email: '',
+        message: '',
+    });
+
+    const handleChange = (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+        setFormData({ ...formData, [event.target.name]: event.target.value });
+    };
+
+    const handleSubmit = (event: React.FormEvent) => {
+        event.preventDefault();
+    };
+
     return (
         <div className="about">
             <Hero title="about me" />
@@ -86,7 +102,7 @@ const About = () => {
             <Container maxWidth={'xl'} className="my-5">
                 <h2 className="title">contact me</h2>
                 <div className="contact row">
-                    <Form className="col col-12 col-lg-6">
+                    <form name="contact" className="col col-12 col-lg-6" onSubmit={handleSubmit} data-netlify="true">
                         <div className="form text-center">
                             <h3 className="mb-4">send me a message</h3>
                             <TextField
@@ -95,6 +111,10 @@ const About = () => {
                                 className="mb-3"
                                 size="small"
                                 color="secondary"
+                                id="name"
+                                name="name"
+                                value={formData.name}
+                                onChange={handleChange}
                             />
                             <TextField
                                 label="phone"
@@ -102,6 +122,10 @@ const About = () => {
                                 className="mb-3"
                                 size="small"
                                 color="secondary"
+                                id="phone"
+                                name="phone"
+                                value={formData.phone}
+                                onChange={handleChange}
                             />
                             <TextField
                                 label="email"
@@ -109,6 +133,10 @@ const About = () => {
                                 className="mb-3"
                                 size="small"
                                 color="secondary"
+                                id="email"
+                                name="email"
+                                value={formData.email}
+                                onChange={handleChange}
                             />
                             <TextField
                                 label="message"
@@ -117,12 +145,16 @@ const About = () => {
                                 rows={5}
                                 size="small"
                                 color="secondary"
+                                id="message"
+                                name="message"
+                                value={formData.message}
+                                onChange={handleChange}
                             />
-                            <Button variant="secondary" className="mt-3 px-5">
+                            <Button type="submit" variant="secondary" className="mt-3 px-5">
                                 send
                             </Button>
                         </div>
-                    </Form>
+                    </form>
                     <div className="info col col-12 col-lg-6">
                         <h3>contact me yourself</h3>
                         <p className="lead">i would love to chat with you!</p>
