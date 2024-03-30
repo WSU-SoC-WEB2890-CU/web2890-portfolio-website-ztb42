@@ -1,0 +1,7 @@
+.portfolio {
+    @include card-styles($primary);
+
+    .title {
+        background-color: $dark-blue;
+    }
+}

@@ -1,0 +1,19 @@
+.details {
+    .title {
+        background-color: $dark-blue;
+    }
+
+    p {
+        align-items: center;
+        display: flex;
+        gap: 1rem;
+
+        &.lead {
+            justify-content: center;
+        }
+    }
+
+    .btn {
+        padding: 0.5rem 3rem;
+    }
+}

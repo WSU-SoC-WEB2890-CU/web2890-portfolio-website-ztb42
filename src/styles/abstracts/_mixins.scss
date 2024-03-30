@@ -1,20 +1,41 @@
-@mixin hero() {
-    min-height: 30vh;
-    background-size: cover;
-    background-position: center;
-
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    .hero-text {
-        color: $light;
-        width: 60%;
-        position: relative;
-    }
-}
-
 @mixin gradient() {
     background: linear-gradient(145deg, darken($dark-blue, 5%), $dark-blue 20%, lighten($dark-blue, 20%));
+}
+
+@mixin card-styles($bgcolor) {
+    &-card {
+        background-color: $bgcolor;
+        color: $dark;
+        display: flex;
+        flex-direction: column;
+        border-radius: 0.5rem;
+        height: 100%;
+
+        img {
+            height: 300px;
+            object-fit: cover;
+            width: 100%;
+            padding: 3px;
+            border-radius: 0.5rem 0.5rem 0 0;
+        }
+
+        .card-body {
+            padding: 1rem 1.5rem;
+            display: flex;
+            flex-direction: column;
+
+            p {
+                flex: 1;
+            }
+
+            .btn {
+                padding: 0.5rem 1.5rem;
+                width: 100% !important;
+
+                @media (max-width: 992px) {
+                    margin-top: 1rem;
+                }
+            }
+        }
+    }
 }

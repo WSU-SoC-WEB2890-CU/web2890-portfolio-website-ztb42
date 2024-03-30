@@ -1,40 +1,63 @@
 .home {
-    .image {
-        height: 100vh;
-        width: 100%;
-        object-fit: cover;
+    .qualities {
+        .title {
+            background-color: $dark-blue;
+        }
+
+        .subtitle {
+            font-size: 1.4rem;
+            text-align: center;
+            color: $primary;
+            width: fit-content;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            border-left: 2px solid $primary;
+            border-right: 2px solid $primary;
+        }
     }
 
-    .controls {
-        position: absolute;
-        bottom: 0;
-        z-index: 1000;
-        margin: 0;
-        text-align: center;
-        width: 100%;
+    &-section {
+        position: relative;
         padding: 1rem 0;
-        background-color: rgba($color: $dark-gray, $alpha: 0.6);
     }
 
-    .gallery-link {
-        position: absolute;
-        bottom: 0;
-        z-index: 1000;
-        margin: 0;
-        text-align: center;
-        width: 100%;
-        padding: 1rem 0;
-        background-color: rgba(black, 0.5);
-        font-family: 'Dosis', sans-serif !important;
-        text-transform: uppercase;
-        text-decoration: none;
-        color: $light;
-        font-size: 1.5rem;
-        transition: 0.2s ease;
+    &-content {
+        padding: 1rem 2.5rem;
+        margin-top: 0;
 
-        &:hover {
-            background-color: rgba(black, 0.55);
-            color: $blue;
+        p {
+            font-size: 0.8rem;
+
+            @include media-breakpoint-up(lg) {
+                font-size: 1rem;
+            }
+        }
+
+        @include media-breakpoint-up(lg) {
+            margin-top: 6.5rem;
+        }
+    }
+
+    &-pic {
+        max-width: 100%;
+        margin: 3rem;
+    }
+
+    &-card {
+        @include media-breakpoint-down(md) {
+            background-color: rgba(black, 0.15);
+            padding: 0 1rem;
+            border-radius: 0.625rem;
+            margin: 2rem 0;
+        }
+    }
+
+    .work {
+        background-color: $dark-blue;
+        @include card-styles($primary);
+
+        .title {
+            background-color: $light-gray;
         }
     }
 }

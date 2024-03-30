@@ -3,7 +3,7 @@
     color: $dark;
 
     .overlay {
-        background-color: rgba($light-brown, 0.65);
+        background-color: rgba($light-brown, 0.7);
         height: 100%;
         width: 100%;
         display: flex;
@@ -20,7 +20,7 @@
         text-decoration: none;
 
         &:hover {
-            color: lighten($dark, 10%);
+            color: $light-gray;
         }
     }
 
@@ -28,6 +28,7 @@
         font-size: 1.2rem;
         line-height: 1.8;
         padding-top: 1rem;
+        margin-bottom: 0;
     }
 
     .social-media {
