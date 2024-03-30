@@ -1,5 +1,5 @@
 import { Container, Tab, Tabs, Box, createTheme, ThemeProvider } from '@mui/material';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Spinner, Button } from 'react-bootstrap';
 import Hero from '../components/Hero';
 
@@ -11,6 +11,17 @@ interface TabData {
 const CaseStudy = () => {
     const [currentTab, setCurrentTab] = useState<number>(0);
     const [iframeLoaded, setIframeLoaded] = useState<boolean>(false);
+    const [isMobile, setIsMobile] = useState<boolean>(false);
+
+    useEffect(() => {
+        const handleResize = () => {
+            setIsMobile(window.innerWidth < 768);
+        };
+
+        handleResize();
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
 
     const handleTabChange = (_event: React.SyntheticEvent, newValue: number) => {
         setCurrentTab(newValue);
@@ -150,7 +161,14 @@ const CaseStudy = () => {
 
                 <Container maxWidth={'lg'} sx={{ mb: 3 }}>
                     <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
-                        <Tabs value={currentTab} onChange={handleTabChange} centered>
+                        <Tabs
+                            variant={isMobile ? 'scrollable' : 'standard'}
+                            scrollButtons={isMobile ? true : false}
+                            allowScrollButtonsMobile={true}
+                            value={currentTab}
+                            onChange={handleTabChange}
+                            centered={!isMobile}
+                        >
                             {tabs.map((tab, index) => (
                                 <Tab key={index} label={tab.label} />
                             ))}

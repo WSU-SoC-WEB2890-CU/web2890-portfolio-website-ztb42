@@ -88,11 +88,15 @@
     }
 
     .image {
-        float: right;
         width: fit-content;
 
         margin: 0 auto;
         padding: 20px;
+
+        @media (min-width: 576px) {
+            padding: 40px;
+            float: right;
+        }
 
         img {
             height: 240px;
