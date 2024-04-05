@@ -123,7 +123,7 @@ const Home = () => {
                                     <p className="lh-lg">Site for Photography Business</p>
                                     <div className="row">
                                         <div className="col col-12 col-lg-5">
-                                            <Link to="dubs-imagery" className="btn btn-light">
+                                            <Link to="/portfolio/dubs-imagery" className="btn btn-light">
                                                 more info
                                             </Link>
                                         </div>
