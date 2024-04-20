@@ -70,41 +70,43 @@ const Details = () => {
 
     if (page) {
         return (
-            <Container className="details" sx={{ mb: '3rem' }}>
+            <>
                 <h1 className="title">{page.title}</h1>
-                <p className="lead my-5">{page.description}</p>
-                <iframe
-                    src={page.externalLink}
-                    title={page.title}
-                    width="100%"
-                    height="800px"
-                    onLoad={() => setIframeLoaded(true)}
-                    style={{ display: iframeLoaded ? 'block' : 'none' }}
-                ></iframe>
-                <Spinner
-                    animation="border"
-                    role="status"
-                    variant="primary"
-                    style={{ display: iframeLoaded ? 'none' : 'block', margin: '0 auto' }}
-                />
-                <div className="row">
-                    <p className="col col-6 my-5">
-                        <strong>Coding Language: </strong> {page.codingLanguage}
-                    </p>
-                    <div className="col col-6 my-5 text-end">
-                        <Button variant="light" href={page.externalLink} target="_blank">
-                            View Site
-                        </Button>
+                <Container className="details" sx={{ mb: '3rem' }}>
+                    <p className="lead my-5">{page.description}</p>
+                    <iframe
+                        src={page.externalLink}
+                        title={page.title}
+                        width="100%"
+                        height="800px"
+                        onLoad={() => setIframeLoaded(true)}
+                        style={{ display: iframeLoaded ? 'block' : 'none' }}
+                    ></iframe>
+                    <Spinner
+                        animation="border"
+                        role="status"
+                        variant="primary"
+                        style={{ display: iframeLoaded ? 'none' : 'block', margin: '0 auto' }}
+                    />
+                    <div className="row">
+                        <p className="col col-6 my-5">
+                            <strong>Coding Language: </strong> {page.codingLanguage}
+                        </p>
+                        <div className="col col-6 my-5 text-end">
+                            <Button variant="light" href={page.externalLink} target="_blank">
+                                View Site
+                            </Button>
+                        </div>
                     </div>
-                </div>
-                {page.caseStudy ? (
-                    <div className="text-center">
-                        <Link to="/case-study" className="btn btn-light px-5 py-3">
-                            Explore Case Study
-                        </Link>
-                    </div>
-                ) : null}
-            </Container>
+                    {page.caseStudy ? (
+                        <div className="text-center">
+                            <Link to="/case-study" className="btn btn-light px-5 py-3">
+                                Explore Case Study
+                            </Link>
+                        </div>
+                    ) : null}
+                </Container>
+            </>
         );
     }
 };

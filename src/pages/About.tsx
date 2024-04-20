@@ -23,9 +23,8 @@ const About = () => {
         <div className="about">
             <Hero title="about me" />
 
+            <h2 className="title mb-5">the story so far...</h2>
             <Container maxWidth={'lg'} sx={{ mb: 5 }}>
-                <h2 className="title mb-5">the story so far...</h2>
-
                 <div className="image">
                     <div className="img-border">
                         <img src="/about-me.jpg" alt="About Us" className="image" />
@@ -99,7 +98,7 @@ const About = () => {
                 </p>
             </Container>
 
-            <Container maxWidth={'xl'} className="my-5">
+            <section className="contact-container">
                 <h2 className="title">contact me</h2>
                 <div className="contact row">
                     <form name="contact" className="col col-12 col-lg-6" onSubmit={handleSubmit} data-netlify="true">
@@ -178,7 +177,7 @@ const About = () => {
                         <p className="lead end">feel free to message me anytime!</p>
                     </div>
                 </div>
-            </Container>
+            </section>
         </div>
     );
 };

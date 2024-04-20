@@ -11,9 +11,9 @@ const Home = () => {
         <div className="home">
             <Hero title="zackary byington" subtitle="web developer" />
 
-            <Container maxWidth={'lg'} sx={{ mb: 5 }}>
-                <section className="qualities">
-                    <h2 className="title">who am i?</h2>
+            <section className="qualities">
+                <h2 className="title">who am i?</h2>
+                <Container maxWidth={'lg'} sx={{ mb: 5 }}>
                     <p className="subtitle">
                         here’s a sneak peek <br /> into what i’m good at!
                     </p>
@@ -79,8 +79,8 @@ const Home = () => {
                             </div>
                         </div>
                     </div>
-                </section>
-            </Container>
+                </Container>
+            </section>
 
             <section className="work">
                 <h2 className="title">latest work</h2>

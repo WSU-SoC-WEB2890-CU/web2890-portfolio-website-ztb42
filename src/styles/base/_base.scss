@@ -20,9 +20,10 @@ h2 {
 
     &.title {
         padding: 2rem 6rem;
-        width: fit-content;
+        width: 100%;
         margin: 0 auto;
         text-align: center;
+        background-color: $dark-blue;
     }
 }
 
